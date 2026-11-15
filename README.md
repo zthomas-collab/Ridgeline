@@ -1,6 +1,6 @@
 # Ridgeline
 
-A cozy earth-tone look for Claude Code chat sessions. It sets a hunter green, moss, tan, warm brown and muted amber color theme, and draws an animated backdrop behind the conversation: layered mountain ridges with slow parallax drift, pine silhouettes, soft clouds, swaying fog bands and a few fireflies. Panels are frosted over the scene so chat text stays readable. With reduced motion turned on in your system settings, the scene holds still. It follows light and dark mode. The backdrop draws in the Claude desktop and mobile apps; the terminal keeps its own look.
+A dark hunter-green, moss, tan and warm brown look for Claude Code chat sessions. It draws a mountain valley at dusk behind the conversation: layered ridges, pine silhouettes, a softly breathing moon and about two dozen fireflies drifting up and fading. Panels are frosted over the scene so chat text stays readable. It is a dark-only theme. The backdrop draws in the Claude desktop and mobile apps; the terminal keeps its own look.
 
 ## Install
 

@@ -199,7 +199,7 @@ const LOOK: ThemeSetArgs = {
   colors: theme,
   // Frosted panels over the scene keep chat text readable; the tint follows
   // the app's own panel color in each mode.
-  backdrop: { scene: 'ridgeline', glass: { blur: 18, opacity: 0.72 } },
+  backdrop: { scene: 'ridgeline', glass: { blur: 6, opacity: 0.4 } },
 }
 
 export const register: Register = on => {

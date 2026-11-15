@@ -1,0 +1,5 @@
+{
+  "name": "ridgeline",
+  "owner": { "name": "ridgeline" },
+  "plugins": [{ "name": "ridgeline", "source": "./" }]
+}

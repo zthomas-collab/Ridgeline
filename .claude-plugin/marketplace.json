@@ -1,5 +1,6 @@
 {
   "name": "ridgeline",
-  "owner": { "name": "ridgeline" },
+  "owner": { "name": "zthomas-collab" },
+  "description": "Ridgeline: a hunter-green Claude Code theme with a mountain valley scene and drifting fireflies.",
   "plugins": [{ "name": "ridgeline", "source": "./" }]
 }

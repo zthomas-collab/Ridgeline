@@ -97,6 +97,6 @@ export const register: Register = on => {
     const asks = backdropAsks.length === 0
       ? 'NONE - the app has not asked this mod to draw the scene in this session'
       : backdropAsks.join('; ')
-    return { text: `Ridgeline 0.2.2\nTheme set: ${lastSet}\nScene draw requests: ${asks}` }
+    return { text: `Ridgeline 0.2.3\nTheme set: ${lastSet}\nScene draw requests: ${asks}` }
   })
 }

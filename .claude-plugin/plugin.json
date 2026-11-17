@@ -1,1 +1,8 @@
-{ "name": "ridgeline", "version": "0.2.2", "description": "Hunter-green earth-tone theme with a mountain valley scene and drifting fireflies." }
+{
+  "name": "ridgeline",
+  "version": "0.2.3",
+  "description": "Hunter-green earth-tone theme with a mountain valley scene and drifting fireflies.",
+  "author": { "name": "zthomas-collab", "url": "https://github.com/zthomas-collab" },
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png"
+}

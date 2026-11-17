@@ -97,16 +97,6 @@ export const register: Register = on => {
     const asks = backdropAsks.length === 0
       ? 'NONE - the app has not asked this mod to draw the scene in this session'
       : backdropAsks.join('; ')
-    return { text: `Ridgeline 0.2.1\nTheme set: ${lastSet}\nScene draw requests: ${asks}` }
-  })
-
-  on('prompt.submit', async ($, e, next) => {
-    const set = await $.theme.set(LOOK)
-
-    if (!set.isDrawn) {
-      $.ui.status(set.reason)
-    }
-
-    return next(e)
+    return { text: `Ridgeline 0.2.2\nTheme set: ${lastSet}\nScene draw requests: ${asks}` }
   })
 }

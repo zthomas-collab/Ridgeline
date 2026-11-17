@@ -55,8 +55,17 @@ const LOOK: ThemeSetArgs = {
   },
 }
 
+// Diagnostics for /ridgeline-check. Module variables reset on reload, which
+// is fine: they describe this load only.
+let lastSet = 'not set yet'
+const backdropAsks: string[] = []
+
 export const register: Register = on => {
   on('ui.render', { component: 'Backdrop' }, ($, e, next) => {
+    const ask = `${e.surface} scene=${e.props.scene} from=${e.props.plugin}`
+    if (!backdropAsks.includes(ask)) {
+      backdropAsks.push(ask)
+    }
     if (e.surface !== 'desktop' && e.surface !== 'mobile') {
       return next(e)
     }
@@ -72,11 +81,23 @@ export const register: Register = on => {
     if (unpainted !== undefined) {
       $.ui.toast(unpainted)
     }
+    await $.command.register({
+      name: 'ridgeline-check',
+      description: 'Report whether the Ridgeline backdrop scene is being drawn',
+    })
     const set = await $.theme.set(LOOK)
+    lastSet = set.isDrawn ? 'accepted (a window that draws themes is attached)' : `not drawn: ${set.reason}`
 
     $.ui.toast(set.isDrawn ? 'Valley theme: a window says it draws this' : `Valley theme not drawn: ${set.reason}`)
 
     return next(e)
+  })
+
+  on('command.run', { command: 'ridgeline-check' }, async () => {
+    const asks = backdropAsks.length === 0
+      ? 'NONE - the app has not asked this mod to draw the scene in this session'
+      : backdropAsks.join('; ')
+    return { text: `Ridgeline 0.2.1\nTheme set: ${lastSet}\nScene draw requests: ${asks}` }
   })
 
   on('prompt.submit', async ($, e, next) => {
